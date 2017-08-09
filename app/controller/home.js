@@ -3,7 +3,7 @@
 module.exports = app => {
   class HomeController extends app.Controller {
     * index() {
-      const { ctx } = this; // logger
+      const {ctx} = this; // logger
       const result = yield ctx.service.user.data();
       const data = {
         name: 'egg',
@@ -24,6 +24,17 @@ module.exports = app => {
       // logger.info(ctx.helper.test())
 
       yield ctx.render('index', data);
+    }
+
+    * validate() {
+      const {ctx} = this;
+      try {
+        ctx.validate({title: {type: 'string'}, content: {type: 'json'},}, ctx.query);
+        ctx.body = {success: true}
+      } catch (err) {
+        ctx.logger.warn(err.errors);
+        ctx.body = {success: false};
+      }
     }
   }
 

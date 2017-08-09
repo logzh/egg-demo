@@ -1,18 +1,20 @@
 'use strict';
 
 module.exports = () => {
-  const config = {};
 
-  config.keys = '12345';
-
-  config.view = {
-    mapping: {
-      '.html': 'nunjucks',
+  return {
+    keys: 'spence',
+    view: {
+      mapping: {
+        '.html': 'nunjucks',
+      },
+      defaultExtension: '.html'
     },
-    defaultExtension: '.html',
+    middleware: ['time', 'error', 'robot'],
+    robot: {
+      ua: [
+        /Baiduspider/i,
+      ]
+    }
   };
-
-  config.middleware = [ 'time', 'error' ];
-
-  return config;
 };
