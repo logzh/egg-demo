@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    {{name}}
+</div>
+
+<h2>package name</h2>
+<p>{{ result.data.name }}</p>
+
+<h2>version</h2>
+<p>{{ result.data.version }}</p>
+
+<h2>description</h2>
+<p>{{ result.data.description }}</p>
+
+<h2>keywords</h2>
+{% for keyword in result.data.keywords %}
+<li>{{ keyword }}</li>
+{% endfor %}
+
+{% endblock %}
