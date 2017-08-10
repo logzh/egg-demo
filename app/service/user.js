@@ -1,8 +1,14 @@
 module.exports = app => {
   class User extends app.Service {
     * find(uid) {
-      const user = yield this.ctx.db.query(`select * from user where uid = ${uid}`);
-      return user;
+      const result = yield app.curl('https://registry.npm.taobao.org/egg/latest', {
+        dataType: 'json',
+      });
+      return result;
+
+      // const user = yield this.ctx.db.query(`select * from user where uid = ${uid}`);
+      // const user = {id: uid, name:`${uid}-name`};
+      // return user;
     }
 
     * data() {
