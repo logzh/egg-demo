@@ -10,7 +10,7 @@ module.exports = () => {
       },
       defaultExtension: '.html'
     },
-    middleware: ['time', 'error', 'robot'],
+    middleware: ['time', 'error'],
     robot: {
       ua: [
         /Baiduspider/i,

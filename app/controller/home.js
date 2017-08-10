@@ -36,6 +36,10 @@ module.exports = app => {
         ctx.body = {success: false};
       }
     }
+
+    * robot() {
+      this.ctx.body = {success: true};
+    }
   }
 
   return HomeController;
