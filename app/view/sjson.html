@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    {{name}}
+</div>
+<div>
+    {{value | safe}}
+</div>
+<script>
+    widows.__DATA__ = {{ dd }};
+</script>
+
+{% endblock %}

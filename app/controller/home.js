@@ -26,6 +26,16 @@ module.exports = app => {
       yield ctx.render('index', data);
     }
 
+    * sjson() {
+      const {ctx} = this;
+      let obj = {field1: '123'};
+      yield ctx.render('sjson', {
+        name: 'test json',
+        value: ctx.helper.escape('<a href="http://www.domain.com">google</a><script>alert(123)</script>'),
+        dd: JSON.stringify(obj)
+      });
+    }
+
     * validate() {
       const {ctx} = this;
       try {
