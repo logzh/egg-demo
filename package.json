@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "egg": "^1.7.0",
     "egg-scripts": "^1.0.0",
     "egg-validate": "^1.0.0",
