@@ -28,11 +28,12 @@ module.exports = app => {
 
     * sjson() {
       const {ctx} = this;
-      let obj = {field1: '123'};
+      let dd = {field1: '123<script>alert(123)</script>'};
+      dd = ctx.helper.sjson(dd)
       yield ctx.render('sjson', {
         name: 'test json',
-        value: ctx.helper.escape('<a href="http://www.domain.com">google</a><script>alert(123)</script>'),
-        dd: JSON.stringify(obj)
+        value: '<a href="http://www.domain.com">google</a><script>alert(123)</script>',
+        dd: JSON.stringify(dd)
       });
     }
 
@@ -49,6 +50,11 @@ module.exports = app => {
 
     * robot() {
       this.ctx.body = {success: true};
+    }
+
+    * error() {
+      const {ctx} = this;
+      throw new Error('test')
     }
   }
 

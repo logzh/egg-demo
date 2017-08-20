@@ -5,10 +5,10 @@
     {{name}}
 </div>
 <div>
-    {{value | safe}}
+    {{ helper.escape(value) }}
 </div>
 <script>
-    widows.__DATA__ = {{ dd }};
+    window.__DATA__ = {{ dd | safe }};
 </script>
 
 {% endblock %}
