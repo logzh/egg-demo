@@ -13,7 +13,7 @@ module.exports = {
     // console.log(123456);
   // },
   * task (ctx) {
-    let data = yield ctx.service.user.data();
-    console.log(data);
+    // let data = yield ctx.service.user.data();
+    // console.log(data);
   }
 };

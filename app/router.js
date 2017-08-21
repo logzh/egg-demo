@@ -14,7 +14,7 @@ module.exports = app => {
   app.get('/robot', robotMiddleware, 'home.robot'); // 应用级别中间件 options 配置在config中，路由级配置在此处？
   app.get('/data', 'data.index');
 
-  app.get('/user/:id', 'user.info');
-  app.get('/user/list', 'user.list');
-  app.get('/user/list2', 'user.list2');
+  app.get('/user/:id', 'center.user.info');
+  app.get('/user/list', 'center.user.list');
+  app.get('/user/list2', 'center.user.list2');
 };
