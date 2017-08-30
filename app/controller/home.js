@@ -3,7 +3,7 @@
 module.exports = app => {
   class HomeController extends app.Controller {
     * index() {
-      const {ctx} = this; // logger
+      const { ctx } = this; // logger
       const result = yield ctx.service.user.data();
       const data = {
         name: 'egg',
@@ -27,34 +27,33 @@ module.exports = app => {
     }
 
     * sjson() {
-      const {ctx} = this;
-      let dd = {field1: '123<script>alert(123)</script>'};
-      dd = ctx.helper.sjson(dd)
+      const { ctx } = this;
+      let dd = { field1: '123<script>alert(123)</script>' };
+      dd = ctx.helper.sjson(dd);
       yield ctx.render('sjson', {
         name: 'test json',
         value: '<a href="http://www.domain.com">google</a><script>alert(123)</script>',
-        dd: JSON.stringify(dd)
+        dd: JSON.stringify(dd),
       });
     }
 
     * validate() {
-      const {ctx} = this;
+      const { ctx } = this;
       try {
-        ctx.validate({title: {type: 'string'}, content: {type: 'json'},}, ctx.query);
-        ctx.body = {success: true}
+        ctx.validate({ title: { type: 'string' }, content: { type: 'json' } }, ctx.query);
+        ctx.body = { success: true };
       } catch (err) {
         ctx.logger.warn(err.errors);
-        ctx.body = {success: false};
+        ctx.body = { success: false };
       }
     }
 
     * robot() {
-      this.ctx.body = {success: true};
+      this.ctx.body = { success: true };
     }
 
     * error() {
-      const {ctx} = this;
-      throw new Error('test')
+      throw new Error('test');
     }
   }
 

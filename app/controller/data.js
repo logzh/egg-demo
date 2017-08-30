@@ -10,7 +10,7 @@ module.exports = app => {
       // };
 
       const result = yield app.axios({
-        url: 'https://registry.npm.taobao.org/egg/latest'
+        url: 'https://registry.npm.taobao.org/egg/latest',
       });
 
       this.ctx.body = result.data;

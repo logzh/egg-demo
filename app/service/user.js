@@ -1,6 +1,8 @@
+'use strict';
+
 module.exports = app => {
   class User extends app.Service {
-    * find(uid) {
+    * find() {
       const result = yield app.curl('https://registry.npm.taobao.org/egg/latest', {
         dataType: 'json',
       });

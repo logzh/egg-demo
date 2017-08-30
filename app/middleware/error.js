@@ -1,10 +1,12 @@
+'use strict';
+
 module.exports = () => {
   return function* (next) {
     try {
       yield* next;
     } catch (e) {
-      let status = e.status || 500;
-      let message = e.message || '服务器错误';
+      // const status = e.status || 500;
+      // const message = e.message || '服务器错误';
 
       // this.app.emit('error', e, this);
 
@@ -34,6 +36,6 @@ module.exports = () => {
       //   this.app.emit('error', e, this);
       // }
     }
-  }
+  };
 };
 

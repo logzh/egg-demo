@@ -4,7 +4,7 @@ module.exports = app => {
   const robotMiddleware = app.middlewares.robot({
     ua: [
       /Baiduspider/i,
-    ]
+    ],
   });
 
   app.get('/', 'home.index');

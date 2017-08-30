@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (options, app) => {
   return function* robotMiddleware(next) {
 
@@ -5,9 +7,9 @@ module.exports = (options, app) => {
     const match = options.ua.some(ua => ua.test(source));
     if (match) {
       this.status = 403;
-      this.message = 'Go away, robot.';
+      this.message = app.name;
     } else {
       yield next;
     }
-  }
+  };
 };

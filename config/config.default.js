@@ -8,13 +8,13 @@ module.exports = () => {
       mapping: {
         '.html': 'nunjucks',
       },
-      defaultExtension: '.html'
+      defaultExtension: '.html',
     },
-    middleware: ['time'], // error
+    middleware: [ 'time' ], // error
     robot: {
       ua: [
         /Baiduspider/i,
-      ]
-    }
+      ],
+    },
   };
 };

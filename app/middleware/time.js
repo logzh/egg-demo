@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = () => {
   return function* (next) {
     const start = Date.now();
