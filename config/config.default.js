@@ -16,5 +16,20 @@ module.exports = () => {
         /Baiduspider/i,
       ],
     },
+    security: {
+      domainWhiteList: [ 'xx.com', 'xxx.com' ],
+    },
+    helper: {
+      shtml: {
+        whiteList: {
+          span: [ 'class', 'style' ],
+        },
+        css: {
+          whiteList: {
+            'font-size': true,
+          },
+        },
+      },
+    },
   };
 };
